@@ -4,9 +4,8 @@ live page: https://waqaroptimist.github.io/sap-mm-pp-html5-portal/
 
 repo: https://github.com/waqaroptimist/sap-mm-pp-html5-portal
 
-What this project covers
-SAP MM & PP t-codes like me31k, migo, md01, md02, mb52, and oms2
+## What this project covers
 
-Basic SPRO and configuration notes
-
-Simple Checklists for MRP and data checks
+* sap mm and pp t-codes like me31k, migo, md01, md02, mb52, and oms2
+* basic spro and configuration notes
+* simple checklists for mrp and data checks
