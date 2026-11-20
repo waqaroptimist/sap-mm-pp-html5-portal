@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Semantic HTML5 Reference Portal for SAP Materials Management (MM) and Production Planning (PP) transaction codes, configurations, and workflow checklists.">
+  <meta name="author" content="Shahzeb Waqar">
+  
+  <!-- Open Graph Metadata for clean link previews on LinkedIn & GitHub -->
+  <meta property="og:title" content="SAP MM & PP Technical Reference Hub">
+  <meta property="og:description" content="A pure semantic HTML5 knowledge base covering SAP MM/PP T-Codes, SPRO configurations, and procurement checklists.">
+  <meta property="og:type" content="website">
+
+  <title>SAP MM &amp; PP Technical Reference Hub | Semantic HTML5 Showcase</title>
+
+  <!-- Minimal embedded styles for clean readability without external dependencies -->
+  <style>
+    :root {
+      --primary: #0a6ed1;
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --text: #1d2d3e;
+      --muted: #556b82;
+      --border: #d9e0e6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: #fff;
+      padding: 8px;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 0; }
+    header, main, footer {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 3px solid var(--primary);
+      margin-top: 1rem;
+      border-radius: 6px 6px 0 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    nav a:hover { text-decoration: underline; }
+    main {
+      background: var(--surface);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 820px) {
+      main { grid-template-columns: 2fr 1fr; }
+      .full-width { grid-column: 1 / -1; }
+    }
+    section, article, aside {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+    aside { background: #f9fbfd; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+    caption {
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      color: var(--muted);
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.6rem;
+      text-align: left;
+    }
+    thead { background: #eef4fa; }
+    tfoot { background: #f9fbfd; font-weight: 600; }
+    code, kbd {
+      background: #eef2f6;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #1d2d3e;
+      color: #f5f7fa;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    pre code { background: transparent; color: inherit; padding: 0; }
+    details {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.6rem 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+    }
+    legend { font-weight: 700; padding: 0 0.4rem; }
+    .form-group { margin-bottom: 0.85rem; }
+    label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font: inherit;
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.65rem 1.25rem;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { opacity: 0.92; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 0 0 6px 6px;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Accessibility: Skip directly to main content for keyboard & screen-reader users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Primary Page Header & Semantic Navigation -->
+  <header>
+    <h1><abbr title="Systems, Applications & Products in Data Processing">SAP</abbr> MM &amp; PP Technical Reference Hub</h1>
+    <p>Quick-reference portal for Materials Management, Production Planning, inventory workflows, and <abbr title="SAP Project Reference Object">SPRO</abbr> configurations.</p>
+    
+    <nav aria-label="Primary Page Sections">
+      <ul>
+        <li><a href="#tcode-matrix">Transaction Codes</a></li>
+        <li><a href="#spro-guides">SPRO &amp; Configuration</a></li>
+        <li><a href="#glossary">ERP Glossary</a></li>
+        <li><a href="#ticket-form">Log Config Request</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+
+    <!-- Section 1: Accessible Data Table -->
+    <section id="tcode-matrix" class="full-width" aria-labelledby="tcode-heading">
+      <h2 id="tcode-heading">Core SAP MM &amp; PP Transaction Code Matrix</h2>
+      <p>Press <kbd>Ctrl</kbd> + <kbd>/</kbd> inside SAP GUI to focus the command field and execute any <abbr title="Transaction Code">T-Code</abbr> listed below.</p>
+
+      <table>
+        <caption>Essential Daily Operations &amp; Master Data Transactions</caption>
+        <thead>
+          <tr>
+            <th scope="col">T-Code</th>
+            <th scope="col">Module</th>
+            <th scope="col">Functional Description</th>
+            <th scope="col">Criticality</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><code>ME31K</code></th>
+            <td>MM (Purchasing)</td>
+            <td>Create Quantity/Value Outline Agreement (Contract)</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>MIGO</code></th>
+            <td>MM (Inventory)</td>
+            <td>Goods Movement (Goods Receipt, Goods Issue, Transfer Posting)</td>
+            <td>Critical</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>MD01</code> / <code>MD02</code></th>
+            <td>PP (MRP)</td>
+            <td>Run Material Requirements Planning (Plant / Single-Item Multi-Level)</td>
+            <td>Critical</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>MB52</code></th>
+            <td>MM (Reporting)</td>
+            <td>Display Warehouse Stocks of Material (Custom Reporting Layouts)</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <th scope="row"><code>OMS2</code></th>
+            <td>MM (Config)</td>
+            <td>Configure Material Types &amp; Quantity/Value Updating</td>
+            <td>High</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">Last verified against SAP ECC 6.0 / S/4HANA compatibility standards on <time datetime="2026-11-20">November 20, 2026</time>.</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Section 2: Native Interactive Accordions (<details> / <summary>) -->
+    <article id="spro-guides" aria-labelledby="spro-heading">
+      <h2 id="spro-heading">Configuration &amp; Troubleshooting Runbooks</h2>
+      <p>Expand each operational step below for configuration paths and verification checks (built with native HTML5 <code>&lt;details&gt;</code> elements—zero JavaScript required).</p>
+
+      <details open>
+        <summary>1. Material Type Setup via <code>OMS2</code></summary>
+        <p>Navigate to <code>SPRO &rarr; Logistics - General &rarr; Material Master &rarr; Basic Settings &rarr; Material Types &rarr; Define Attributes of Material Types</code>.</p>
+        <ul>
+          <li>Verify <strong>Quantity Updating</strong> and <strong>Value Updating</strong> per Valuation Area.</li>
+          <li>Assign appropriate Field Selection Group and Account Category Reference.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>2. Contract Release Strategy Verification (<code>ME31K</code>)</summary>
+        <p>Ensure contract document types (<code>MK</code> for Quantity Contract, <code>WK</code> for Value Contract) are linked to active release classes and target value thresholds.</p>
+        <pre><code>Table Check (SE16N):
+EKKO-BSTYP = 'K'  (Purchasing Document Category: Contract)
+EKKO-BSART = 'MK' (Document Type: Quantity Contract)</code></pre>
+      </details>
+
+      <details>
+        <summary>3. Pre-MRP Run Readiness Checklist (<code>MD02</code>)</summary>
+        <ol>
+          <li>Confirm open Purchase Requisitions and Planned Orders are up to date.</li>
+          <li>Validate BOM (<code>CS03</code>) and Routing (<code>CA03</code>) validity dates.</li>
+          <li>Check stock levels in restricted vs. unrestricted-use storage locations.</li>
+        </ol>
+      </details>
+    </article>
+
+    <!-- Sidebar: Semantic Meters, Progress Bars & Glossary -->
+    <aside aria-label="Module Readiness and Glossary">
+      <h2>Implementation Readiness</h2>
+      
+      <p>
+        <label for="mm-progress">MM Master Data Migration (90%):</label><br>
+        <progress id="mm-progress" value="90" max="100">90%</progress>
+      </p>
+
+      <p>
+        <label for="mrp-health">MRP Accuracy Score (0.94 / 1.00):</label><br>
+        <meter id="mrp-health" min="0" max="1" low="0.6" high="0.85" optimum="0.95" value="0.94">94%</meter>
+      </p>
+
+      <hr>
+
+      <h3 id="glossary">Quick ERP Glossary</h3>
+      <dl>
+        <dt><dfn>MRP</dfn> (Material Requirements Planning)</dt>
+        <dd>Automated planning process that calculates net material shortages and generates procurement proposals.</dd>
+
+        <dt><dfn>ME31K</dfn></dt>
+        <dd>Transaction used to establish long-term vendor contracts before issuing release purchase orders.</dd>
+
+        <dt><dfn>SPRO</dfn></dt>
+        <dd>SAP Project Reference Object; the central configuration menu for customizing SAP modules.</dd>
+      </dl>
+    </aside>
+
+    <!-- Section 3: Accessible, Validated HTML5 Form -->
+    <section id="ticket-form" class="full-width" aria-labelledby="form-heading">
+      <h2 id="form-heading">Submit SAP Configuration / Master Data Change Request</h2>
+      <p>Demonstrates accessible form grouping (<code>&lt;fieldset&gt;</code>), native autocomplete (<code>&lt;datalist&gt;</code>), option groups (<code>&lt;optgroup&gt;</code>), and built-in HTML5 validation.</p>
+
+      <form action="#ticket-form" method="get">
+        <fieldset>
+          <legend>Requester &amp; Module Details</legend>
+
+          <div class="form-group">
+            <label for="requester-name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="requester-name" name="requester_name" placeholder="e.g., Shahzeb Waqar" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="requester-email">Corporate Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="requester-email" name="requester_email" placeholder="name@company.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="sap-module">Target SAP Module <span aria-hidden="true">*</span></label>
+            <select id="sap-module" name="sap_module" required>
+              <option value="">-- Select a Module --</option>
+              <optgroup label="Logistics &amp; Supply Chain">
+                <option value="MM">MM - Materials Management</option>
+                <option value="PP">PP - Production Planning</option>
+                <option value="WM">WM / EWM - Warehouse Management</option>
+              </optgroup>
+              <optgroup label="Finance &amp; Cross-Application">
+                <option value="FICO">FI/CO - Financial Accounting &amp; Controlling</option>
+                <option value="BASIS">Basis / Authorization Roles</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tcode-input">Related Transaction Code (Autocomplete Enabled)</label>
+            <input list="tcode-suggestions" id="tcode-input" name="tcode" pattern="[A-Za-z0-9_]{2,20}" title="Alphanumeric T-Code (2–20 characters)" placeholder="Start typing e.g. ME31K, OMS2, MD02...">
+            <datalist id="tcode-suggestions">
+              <option value="ME31K">
+              <option value="MIGO">
+              <option value="MD02">
+              <option value="MB52">
+              <option value="OMS2">
+              <option value="SPRO">
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="target-date">Requested Go-Live Date</label>
+            <input type="date" id="target-date" name="target_date" min="2026-11-20">
+          </div>
+
+          <div class="form-group">
+            <label for="change-notes">Business Justification &amp; Functional Specs <span aria-hidden="true">*</span></label>
+            <textarea id="change-notes" name="change_notes" rows="4" required placeholder="Describe the required SPRO change, layout update, or master data rule..."></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit">Validate &amp; Submit Request</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Page Footer -->
+  <footer>
+    <p>Built with pure Semantic HTML5 &bull; Designed for accessibility, SEO structure, and zero-dependency performance.</p>
+    <p><small>&copy; <time datetime="2026">2026</time> SAP MM &amp; PP Technical Reference Hub. Licensed under MIT.</small></p>
+  </footer>
+
+</body>
+</html>
